@@ -428,6 +428,40 @@
                 </footer>
             </div>
         </div>
+        <div class="popup">
+            <div class="popup__body">
+                <a href="#" class="popup__body-close">
+                    <img src="./svg/form-x.svg" width="27px">
+                </a>
+                <div class="popup__name">Ваш фидбек</div>
+                <form class="popup__form">
+                    <div class="popup__form-text">Как часто вы заходите на сайт?</div>
+                    <div class="select-wrapper">
+                        <select id="popup__list" class="popup__form-list" name="list">
+                            <option value="1">Почти каждый день</option>
+                            <option value="2">Раз в несколько дней</option>
+                            <option value="3">Раз в несколько недель</option>
+                            <option value="4">Несколько раз в год</option>
+                        </select>
+                        <img src="./svg/form-arrows.svg">
+                    </div>
+                    <div class="popup__form-text">Вы подписаны на e-mail рассылку?</div>
+                    <div class="popup__form-radio">
+                        <form>
+                            <input id="yes" type="radio" class="radio" name="question" value="yes" required>
+                            <label for="yes" class="radio-text">Да</label>
+                            <input id="no" type="radio" class="radio" name="question" value="no">
+                            <label for="no" class="radio-text">Нет</label>
+                        </form>    
+                    </div>
+                    <div class="popup__form-text">
+                        Расскажите, какой контент вы хотели бы видеть на нашем сайте?
+                    </div>
+                    <textarea class="popup__form-textarea" name="massage" rows="6" placeholder="Может, больше рецептов?" ></textarea>
+                    <input class="btn popup__btn" type="submit" name="popup_submit" value="Отправить">
+                </form>
+            </div>
+        </div>
     </main>        
 </body>
 </html>

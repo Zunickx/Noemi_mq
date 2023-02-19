@@ -134,29 +134,30 @@ main {
 }
 
 .trend__header {
-    position: relative;
     margin: 0 0 37px 0;
     text-align: center;
 
 }
 
-.trend__header::before {
+.trend__header-name {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "OpenSans-Bold";
+    font-weight: bold;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+.trend__header-name::before {
     display: block;
     position: absolute;
     content: "";
     width: 67px;
     height: 3px;
     top: 34px;
-    left: 44.24%;
     background-color: #e1d9bd;
-}
-
-.trend__header-name {
-
-    font-family: "OpenSans-Bold";
-    font-weight: bold;
-    line-height: 100%;
-    text-transform: uppercase;
 }
 
 .trend__articls {
@@ -355,6 +356,9 @@ main {
 .columns__right-posts__name-block {
     margin: 0 0 0 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "OpenSans-Bold";
     font-size: 16px;
     font-weight: bold;
@@ -370,7 +374,6 @@ main {
     width: 67px;
     height: 3px;
     top: 34px;
-    left: 39.67%;
     background-color: #e1d9bd;
 }
 
@@ -614,6 +617,9 @@ input#email:focus {
 
 .products__name-block {
     margin: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "OpenSans-Bold";
     font-weight: bold;
     line-height: 100%;
@@ -627,7 +633,6 @@ input#email:focus {
     width: 67px;
     height: 3px;
     top: 34px;
-    left: 39.67%;
     background-color: #e1d9bd;
 }
 
@@ -790,6 +795,154 @@ input#email:focus {
     text-decoration: none;
 }
 
+.popup {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* display: none; */
+    background-color: rgb(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup__body {
+    position: absolute;
+    font-size: 13px;
+    top: 56px;
+    max-width: 331px;
+    padding: 26px 25px;
+    background-color: #fff;
+}
+
+.popup__body-close {
+    position: absolute;
+    top: -31px;
+    right: 0;
+}
+  
+.popup__name {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "OpenSans-Bold";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 41px 0;
+}
+
+.popup__name::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    height: 3px;
+    width: 67px;
+    background-color: #b59f5b
+
+}
+
+.popup__form {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.popup__form-text {
+    line-height: 120%;
+    margin: 0 0 9px 0;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.popup__form-list {
+    margin: 0 0 31px 0;
+    line-height: 100%;
+    padding: 18px 19px;
+    background-color: #f4f7f6;
+    border: 1px solid transparent;
+    outline: none;
+    width: 100%;
+}
+
+select#popup__list:focus {
+    border: 1px solid #b59f5b;
+    border-radius: 0;
+}
+
+.select-wrapper img {
+    width: 8px;
+    height: 18px;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    fill: #b59f5b;
+  }
+
+.popup__form-radio {
+    margin: 0 0 28px 0;
+}
+
+.radio {
+    display: inline-block;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+}
+
+.radio-text::before {
+    margin-right: 5px;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    background-image: url("../svg/form-empty-circle.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center center;
+    background-size: 20px;
+}
+
+.radio:checked + .radio-text::before {
+    background-image: url("../svg/form-circle.svg");
+}
+
+.radio-text {
+    margin: 0 30px 0 0;
+}
+
+.popup__form-textarea {
+    font-family: "OpenSans-Regular";
+    font-size: 13px;
+    padding: 16px 20px;
+    width: 100%;
+    height: 131px;
+    background-color: #f4f7f6;
+    border: none;
+    outline: none;
+    margin: 0 0 27px 0;
+    resize: none;
+}
+
+.popup__btn {
+    font-size: 14px;
+    padding: 19px 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
 
 
 @media ((orientation:landscape) or (orientation:portrait)) and (min-width: 400px) and (max-width: 767px) {
@@ -807,11 +960,6 @@ input#email:focus {
         width: calc(50% - 3px);
         margin: 0 3px 3px 0;
     }
-
-    /* .trend__articls-block:nth-child(2n+2) {
-        width: 50%;
-        margin: 0 0 3px 0;
-    } */
 
     .trend__articls-block__inner {
         width: 100%;
@@ -841,10 +989,6 @@ input#email:focus {
         width: 100%;
     }
 
-    .columns__right-posts__name-block::before {
-        left: 44.7%;
-    }
-
     .tags__list-item:nth-child(4n+4) {
         margin: 0 5px 6px 0;
     }
@@ -852,7 +996,15 @@ input#email:focus {
     .tags__list-item:last-child {
         margin: 0 0px 6px 0;
     }
+
+    .popup__body {
+        top: 236px;
+    }
 }
+
+
+
+
 
 @media (min-width: 768px) and (max-width: 1199px) {
     .header {
@@ -951,10 +1103,6 @@ input#email:focus {
         font-size: 14px;
     }
 
-    .columns__right-posts__name-block::before {
-        left: 37.7%;
-    }
-
     .article {
         margin: 0 0 42px 0;
     }
@@ -1008,10 +1156,6 @@ input#email:focus {
         margin: 0 0 43px 0;
     }
 
-    .products__name-block::before {
-        left: 45.7%;
-    }
-
     .products__list {
         display: flex;
         flex-wrap: wrap;
@@ -1039,7 +1183,14 @@ input#email:focus {
         padding: 48px 20px 26px 20px;
         flex: 1 1 0;
     }
+
+    .popup__body {
+        top: 236px;
+        max-width: 390px;
+    }
 }
+
+
 
 
 @media (min-width: 1200px) {
@@ -1214,16 +1365,17 @@ input#email:focus {
         margin: 0 0 0 0;
     }
 
-    /* .products__list-item:last-child {
-        margin: 0 0 27px 0;
-    } */
-
     .products__list-item__top-column {
         flex: 1 0 0;
     }
 
     .products__list-item__bottom-column {
         flex: 1 0 0;
+    }
+
+    .popup__body {
+        top: 243px;
+        max-width: 390px;
     }
 }
 
