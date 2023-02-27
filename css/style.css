@@ -821,6 +821,7 @@ input#email:focus {
 
 .popup__body-close {
     position: absolute;
+    width: 27px;
     top: -31px;
     right: 0;
 }
